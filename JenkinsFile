@@ -18,9 +18,9 @@ pipeline {
     }
     stage('Build and Test') {
       steps {
-withMaven(maven: 'mvn') {
-            sh "mvn clean package"
-        }
+def mvnHome = tool name: 'Apache Maven 3.6.0', type: 'maven'
+            sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+        
         // build the project and create a JAR file
         
       }
