@@ -7,9 +7,7 @@ pipeline {
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
-tools {
-          maven 'Maven 3.2.5'
-    }
+
   stages {
     stage('Checkout') {
       steps {
@@ -20,9 +18,11 @@ tools {
     }
     stage('Build and Test') {
       steps {
-
+withMaven(maven: 'mvn') {
+            sh "mvn clean package"
+        }
         // build the project and create a JAR file
-        sh 'mvn clean package'
+        
       }
     }
     stage('Static Code Analysis') {
