@@ -1,28 +1,23 @@
 pipeline {
   agent {
     docker {
-      
       image 'ratnparkhiv/jenkins-spring-java:v2'
-  
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
-
-  stages {
+  
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'master', url: 'https://github.com/vishalratn/Jenkins-Spring-Java.git'
-
+         //git branch: 'master', url: 'https://github.com/vishalratn/Jenkins-Spring-Java.git'
       }
     }
-}
+
     stage('Build and Test') {
       steps {
-sh 'mvn clean package'
-        
+     
         // build the project and create a JAR file
-        
+        sh 'mvn clean package'
       }
     }
     stage('Static Code Analysis') {
