@@ -8,7 +8,7 @@ pipeline {
     }
   }
 tools {
-        maven 'MavenInstallationName'
+        maven 'maven'
     }
   stages {
     stage('Checkout') {
