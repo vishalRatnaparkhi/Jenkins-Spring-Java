@@ -9,5 +9,7 @@ WORKDIR /opt/app
 
 COPY ${artifact} app.jar
 
+RUN ["chmod", "+x", "/opt/app/app.jar"]
+
 # This should not be changed
 ENTRYPOINT ["java","-jar","app.jar"]
