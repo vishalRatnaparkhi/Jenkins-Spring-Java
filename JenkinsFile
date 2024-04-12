@@ -20,6 +20,7 @@ environment {
         sh 'echo ${MAVEN_HOME}'
         sh 'echo ${PATH}'
         sh '''
+       id
           ls -ltr /
 ls -ltr /usr/
 ls -ltr /usr/share/
