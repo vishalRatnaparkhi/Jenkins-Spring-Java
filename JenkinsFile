@@ -29,7 +29,7 @@ environment {
       steps {
      
         // build the project and create a JAR file
-        sh 'mvn clean package'
+        sh '/usr/share/maven/bin/mvn clean package'
       }
     }
     stage('Static Code Analysis') {
