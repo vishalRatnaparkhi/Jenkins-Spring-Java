@@ -37,7 +37,7 @@ sh 'mvn sonar:sonar'
 }
 }
 
-
+}
 
 stage("Quality "){
 steps{
