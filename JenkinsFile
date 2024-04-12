@@ -18,7 +18,7 @@ maven 'maven_server'
         sh '''
          
 ls -ltr /usr/share/
-docker
+
 
         '''
         
@@ -44,6 +44,13 @@ docker
         }
       }
     }
+stage('Debug') {
+            steps {
+                sh 'echo $PATH'
+                sh 'which docker'
+                sh 'docker --version'
+            }
+        }
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "ratnparkhiv/jenkins-spring-java:${BUILD_NUMBER}"
