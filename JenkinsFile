@@ -14,6 +14,8 @@ maven 'maven'
     stage('Checkout') {
       steps {
         sh 'echo passed'
+        sh 'echo    ${env.MAVEN_HOME}'
+        sh 'echo    ${env.PATH}'
          //git branch: 'master', url: 'https://github.com/vishalratn/Jenkins-Spring-Java.git'
       }
     }
@@ -21,7 +23,7 @@ maven 'maven'
       steps {
      
         // build the project and create a JAR file
-        sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn clean package'
+        sh 'mvn clean package'
       }
     }
     stage('Static Code Analysis') {
