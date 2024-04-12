@@ -9,20 +9,14 @@ pipeline {
 tools{
 maven 'maven_server'
 }
-
+environment {
+        PATH = "${env.MAVEN_HOME}/bin:${env.PATH}"
+    }
 
   stages {
     stage('Checkout') {
     steps {
         sh 'echo passed'
-        sh 'echo ${MAVEN_HOME}'
-        sh 'echo ${PATH}'
-        // Set MAVEN_HOME and update PATH
-        sh '''
-        export MAVEN_HOME=/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven
-        export PATH="${MAVEN_HOME}/bin:${PATH}"
-        '''
-        
         sh 'echo ${MAVEN_HOME}'
         sh 'echo ${PATH}'
         
