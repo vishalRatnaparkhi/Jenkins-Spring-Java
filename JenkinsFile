@@ -6,7 +6,7 @@ maven 'Maven3'
 }
 
 environment{ 
-APP_NAME="Jenkins-Spring-Java"
+APP_NAME="jenkins-spring-java"
 RELEASE="1.0.0"
 DOCKER_USER="ratnparkhiv"
 DOCKER_PASS="dockerhub"
