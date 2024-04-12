@@ -23,7 +23,7 @@ environment {
           ls -ltr /
 ls -ltr /usr/
 ls -ltr /usr/share/
-ls -ltr /opt/
+ls -ltr /opt/app/
         '''
         
         // Uncomment the git step when you're ready to checkout the repository
