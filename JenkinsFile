@@ -5,9 +5,11 @@ pipeline {
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
-tools {
-maven "maven"
-}
+environment {
+        MAVEN_HOME = '/usr/share/maven'
+        PATH = "${env.MAVEN_HOME}/bin:${env.PATH}"
+    }
+
 
   stages {
     stage('Checkout') {
