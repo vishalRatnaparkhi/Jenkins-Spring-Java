@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'ratnparkhiv/jenkins-spring-java:v3'
+      image 'ratnparkhiv/jenkins-spring-java:v4'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
@@ -9,21 +9,16 @@ pipeline {
 tools{
 maven 'maven_server'
 }
-environment {
-        PATH = "${env.MAVEN_HOME}/bin:${env.PATH}"
-    }
+
 
   stages {
     stage('Checkout') {
     steps {
         sh 'echo passed'
-        sh 'echo ${MAVEN_HOME}'
-        sh 'echo ${PATH}'
         sh '''
-          ls -ltr /
-ls -ltr /usr/
+         
 ls -ltr /usr/share/
-ls -ltr /opt/app/
+
         '''
         
         // Uncomment the git step when you're ready to checkout the repository
