@@ -21,6 +21,7 @@ environment {
         sh 'echo ${PATH}'
         sh '''
        id
+ip
           ls -ltr /
 ls -ltr /usr/
 ls -ltr /usr/share/
