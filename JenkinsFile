@@ -21,7 +21,7 @@ maven 'maven'
       steps {
      
         // build the project and create a JAR file
-        sh 'mvn clean package'
+        sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn clean package'
       }
     }
     stage('Static Code Analysis') {
