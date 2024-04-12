@@ -19,7 +19,7 @@ environment {
         sh 'echo passed'
         sh 'echo ${MAVEN_HOME}'
         sh 'echo ${PATH}'
-        sh ' pwd'
+        sh 'cd /'
         
         // Uncomment the git step when you're ready to checkout the repository
         // git branch: 'master', url: 'https://github.com/vishalratn/Jenkins-Spring-Java.git'
