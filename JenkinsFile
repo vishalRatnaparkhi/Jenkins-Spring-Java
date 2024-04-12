@@ -15,7 +15,8 @@ maven 'maven'
     stage('Checkout') {
     steps {
         sh 'echo passed'
-        
+        sh 'echo ${MAVEN_HOME}'
+        sh 'echo ${PATH}'
         // Set MAVEN_HOME and update PATH
         sh '''
         export MAVEN_HOME=/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven
