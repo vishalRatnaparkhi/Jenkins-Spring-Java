@@ -30,7 +30,7 @@ environment {
       steps {
      
         // build the project and create a JAR file
-        sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven_server/bin/mvn clean package'
+        sh '${MAVEN_HOME}/bin/mvn clean package'
       }
     }
     stage('Static Code Analysis') {
