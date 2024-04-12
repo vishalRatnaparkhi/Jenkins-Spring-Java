@@ -18,6 +18,7 @@ maven 'maven_server'
         sh '''
          
 ls -ltr /usr/share/
+docker
 
         '''
         
