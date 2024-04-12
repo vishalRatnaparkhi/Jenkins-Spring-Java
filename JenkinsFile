@@ -15,7 +15,7 @@ maven 'maven'
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        sh '  PATH = "${MAVEN_HOME}/bin:${PATH}" '
+        sh ' export PATH = "${MAVEN_HOME}/bin:${PATH}" '
         sh 'echo    ${MAVEN_HOME}'
         sh 'echo    ${PATH}'
          //git branch: 'master', url: 'https://github.com/vishalratn/Jenkins-Spring-Java.git'
